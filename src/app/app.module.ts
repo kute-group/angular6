@@ -9,6 +9,15 @@ import { HeroesComponent } from './pages/heroes/heroes.component';
 import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { MessagesComponent } from './pages/messages/messages.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { TestimonialComponent } from './pages/testimonial/testimonial.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 
 @NgModule({
@@ -19,6 +28,15 @@ import { MessagesComponent } from './pages/messages/messages.component';
     HeroDetailComponent,
     ProductsComponent,
     MessagesComponent,
+    HeaderComponent,
+    FooterComponent,
+    AboutComponent,
+    ContactComponent,
+    BlogComponent,
+    ServicesComponent,
+    PortfolioComponent,
+    TestimonialComponent,
+    NotfoundComponent,
 
   ],
   imports: [
