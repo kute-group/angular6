@@ -1,0 +1,22 @@
+.heroes{
+	background: #eee;
+	width: 400px;
+	padding: 50px;
+	h1{
+		color: red;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		li{
+			list-style: none;
+			background: #BBD8DC;
+			color: #fff;
+			padding: 10px;
+			cursor: pointer;
+		}
+		.selected{
+			background: #607D8B;
+		}
+	}
+}
