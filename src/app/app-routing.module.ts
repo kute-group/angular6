@@ -6,6 +6,7 @@ import { HeroDetailComponent } from './pages/hero-detail/hero-detail.component'
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
 	{ path: 'services', component: ServicesComponent },
 	{ path: 'portfolio', component: PortfolioComponent },
 	{ path: 'blog', component: BlogComponent },
+	{ path: 'blog/:id', component: BlogDetailComponent },
 	{ path: 'testimonial', component: TestimonialComponent },
 	{ path: '**', component: NotfoundComponent },
 

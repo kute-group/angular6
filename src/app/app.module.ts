@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,9 @@ import { ServicesComponent } from './pages/services/services.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { TestimonialComponent } from './pages/testimonial/testimonial.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { HeadlineComponent } from './shared/headline/headline.component';
 
 
 @NgModule({
@@ -37,12 +40,16 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     PortfolioComponent,
     TestimonialComponent,
     NotfoundComponent,
+    BlogDetailComponent,
+    SidebarComponent,
+    HeadlineComponent,
 
   ],
   imports: [
     BrowserModule,
 		AppRoutingModule,
-		FormsModule
+		FormsModule,
+		ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
