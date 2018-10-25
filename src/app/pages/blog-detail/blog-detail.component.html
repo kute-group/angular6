@@ -66,8 +66,9 @@
 						consectetuer, semper ad qui, est rebum nulla argumentum ei.
 					</p>
 				</div>
-				<div class="comment-area"  *ngIf="product">
-					<h4 *ngIf="product.reviews"><span>{{product.reviews.length}}</span> Reviews</h4>
+				<div class="comment-area" *ngIf="product">
+					<h4 *ngIf="product.reviews">
+						<span>{{product.reviews.length}}</span> Reviews</h4>
 					<div *ngIf="product.reviews">
 						<div *ngFor="let review of product.reviews" class="media">
 							<a href="#" class="thumbnail pull-left">
@@ -87,41 +88,36 @@
 					</div>
 
 					<h4>Leave your comment</h4>
-					<form 
-						[formGroup]="reviewForm"
-						(ngSubmit)="onSubmit()"
-						id="commentform" 
-						name="comment-form">
-						<div class="row">
-							<div class="span4">
-								<input 
-									formControlName="fullname"
-									type="text" 
-									placeholder="* Enter your full name" />
+					<form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" id="commentform" name="comment-form">
+						<div class="row comment-form">
+							<div class="span4 form-input">
+								<input formControlName="fullname" type="text" placeholder="* Enter your full name" />
 								<div *ngIf="submitted && reviewForm.controls.fullname.errors" class="error">
-									<div *ngIf="reviewForm.controls.fullname">Email is required</div>
+									<div *ngIf="reviewForm.controls.fullname.errors.required">Full name is required</div>
 								</div>
 							</div>
-							<div class="span4">
-								<input 
-									formControlName="email"
-									type="text" 
-									placeholder="* Enter your email address" />
+							<div class="span4 form-input">
+								<input formControlName="email" type="text" placeholder="* Enter your email address" />
+								<div *ngIf="submitted && reviewForm.controls.email.errors" class="error">
+									<div *ngIf="reviewForm.controls.email.errors.required">E-mail is required</div>
+									<div *ngIf="reviewForm.controls.email.errors.email">E-mail is not right format</div>
+								</div>
 							</div>
-							<div class="span4 margintop10">
-								<input 
-									formControlName="website"
-									type="text" 
-									placeholder="Enter your website" />
+							<div class="span4 margintop10 form-input">
+								<input formControlName="website" type="text" placeholder="Enter your website" />
+								<div *ngIf="submitted && reviewForm.controls.website.errors" class="error">
+									<div *ngIf="reviewForm.controls.website.errors.required">Website is required</div>
+								</div>
 							</div>
-							<div class="span8 margintop10">
+							<div class="span8 margintop10 form-input">
 								<p>
-									<textarea 
-										formControlName="content"
-										rows="12" 
-										class="input-block-level" 
-										placeholder="*Your comment here"></textarea>
+									<textarea formControlName="content" rows="12" class="input-block-level" placeholder="*Your comment here"></textarea>
 								</p>
+								<div *ngIf="submitted && reviewForm.controls.content.errors" class="error">
+									<div *ngIf="reviewForm.controls.content.errors.required">Content is required</div>
+								</div>
+							</div>
+							<div class="span8 margintop10 form-input">
 								<p>
 									<button class="btn btn-theme margintop10" type="submit">Submit comment</button>
 								</p>

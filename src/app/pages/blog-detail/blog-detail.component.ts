@@ -22,7 +22,7 @@ export class BlogDetailComponent implements OnInit {
   ngOnInit() {
     this.reviewForm = this.formBuilder.group({
       fullname: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       website: ['', Validators.required],
       content: ['', Validators.required],
     });
@@ -37,21 +37,27 @@ export class BlogDetailComponent implements OnInit {
   }
 
   onSubmit() {
+		console.log(this.reviewForm)
     this.submitted = true;
     if (this.reviewForm.invalid) {
       return;
     }
     const id = this.route.snapshot.paramMap.get('id');
-    if (this.reviewForm.controls.fullname.value !== '') {
+    if (
+      this.reviewForm.controls.fullname.value !== '' &&
+      this.reviewForm.controls.email.value &&
+			this.reviewForm.controls.content.value && 
+			this.reviewForm.controls.website.value
+    ) {
       this.productService
         .addReview(id, this.reviewForm.value)
         .subscribe(result => {
-					if(result.status && result.status ==="success"){
-						this.getProduct();
-						this.submitted = false;
-						this.reviewForm.controls.content.setValue('');
-					}
-				});
+          if (result.status && result.status === 'success') {
+            this.getProduct();
+            this.submitted = false;
+            this.reviewForm.controls.content.setValue('');
+          }
+        });
     }
   }
 }

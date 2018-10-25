@@ -1641,6 +1641,17 @@ ul.meta-post li a {
   width: 100%;
   margin-top: 30px;
 }
+.comment-form .form-input{
+	position: relative;
+}
+.comment-form .error{
+	color: #F03C02;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	font-size: 12px;
+	font-weight: bold;
+}
 
 .media-content {
   overflow: hidden;
